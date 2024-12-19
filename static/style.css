@@ -1,0 +1,246 @@
+/* Basic reset and utility styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'GT America', sans-serif;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+body {
+    background-color: white; /* Light mode background */
+    color: black; /* Light mode text color */
+}
+
+body.dark-mode {
+    background-color: #181822;
+    color: #e0e1e5;
+}
+
+/* Heading section within scrollable area */
+h3#heading {
+    font-size: 1.75rem; /* Slightly larger heading */
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Adjust to fit content without taking the whole page */
+    width: calc(100% - 3ch);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: transparent; /* Ensure background is transparent */
+    outline: none;
+    border: none;
+    z-index: 1;
+    color: inherit; /* Ensure it is above the textarea */
+}
+/* Dark mode heading color */
+body.dark-mode #heading {
+    color: #e0e1e5; /* Adjust this to match your text color in dark mode */
+}
+
+/* Light mode heading color */
+body:not(.dark-mode) #heading {
+    color: black; /* Adjust this to match your text color in light mode */
+}
+
+/* Placeholder styles */
+.placeholder {
+    color: #aaaeb8;
+}
+
+#heading:empty:before {
+    content: attr(placeholder);
+    color: #aaaeb8;
+}
+
+#heading:focus:empty:before {
+    content: "";
+}
+
+/* Textarea below heading */
+.textarea-fullscreen {
+    width: calc(100% - 6ch); /* Full width */
+    min-height: calc(100vh - 80px); /* Adjust to fit the remaining page height after heading */
+    padding: 20px; /* Prevent text from touching the edges */
+    background: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+    resize: none; /* Disable resizing */
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-y: auto; /* Scroll content inside */
+    margin-top: 0; /* No extra margin */
+}
+
+/* Dark mode adjustments for textarea */
+body.dark-mode .textarea-fullscreen {
+    background-color: transparent;
+    color: white;
+}
+
+/* Scroll behavior */
+html, body {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px; /* Customize scrollbar width */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Custom color */
+    border-radius: 10px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darken on hover */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+}
+
+/* Position the toggle and ellipsis icons */
+.absolute {
+    position: fixed; /* Fix the toggle menu in place */
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px;
+    z-index: 2;
+}
+
+.top-4 {
+    top: 0.5rem;
+}
+
+.right-4 {
+    right: 1rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+/* Horizontal dots for settings toggle */
+#settingsToggle {
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+body.dark-mode #settingsToggle {
+    background-color: #181822;
+    color: white;
+}
+
+body #settingsToggle {
+    background-color: white;
+    color: black;
+}
+
+/* Dropdown menu styling */
+#settingsMenu {
+    display: none;
+    right: 0;
+    top: 3rem;
+    background-color: rgba(24, 24, 34, 0.8);
+    color: #e0e1e5;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    backdrop-filter: blur(5px);
+    z-index: 3;
+}
+
+#settingsMenu.active {
+    display: block;
+}
+
+#settingsMenu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#settingsMenu li {
+    margin: 5px 0;
+}
+
+#settingsMenu button, #settingsMenu input {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#settingsMenu button:hover, #settingsMenu input:hover {
+    background-color: #474b55;
+    color: #e0e1e5;
+}
+
+#settingsMenu .option-separator {
+    border-top: 1px solid #474b55;
+    margin: 5px 0;
+}
+
+/* Placeholder styles */
+::placeholder {
+    color: #aaaeb8;
+    opacity: 1;
+}
+
+textarea::placeholder {
+    color: #aaaeb8;
+}
+
+.dark-mode ::placeholder {
+    color: rgba(224, 225, 229, 0.15);
+}
+
+/* Style adjustments for large cursor on heading hover */
+#heading:hover {
+    cursor: pointer;
+    font-weight: bold; /* Optional, but gives it more presence */
+    color: rgba(100, 100, 120, 0.9); /* Slight color change on hover */
+}
+
+/* Larger cursor on heading click */
+#heading:active {
+    cursor: text;
+}
+
+/* Ensure the textarea is scrollable and keeps the heading fixed when scrolling */
+textarea {
+    position: relative;
+    top: 0;
+    height: auto;
+    overflow: auto;
+}
+
+#heading.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+}
