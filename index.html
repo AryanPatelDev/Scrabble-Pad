@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scrabble Pad</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body class="group bg-body text-gray-950 dark:bg-[#181822] dark:text-white transition-colors duration-300">
-
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body
+    class="group bg-body text-gray-950 dark:bg-[#181822] dark:text-white transition-colors duration-300"
+  >
     <div class="h-screen relative max-w-screen-lg mx-auto">
-        <!-- Top-right icons container -->
-        <div class="absolute top-4 right-4 flex items-center gap-4">
-            <button id="settingsToggle" class="text-white text-xl">
-                <span>...</span>
-            </button>
-        </div>
+      <!-- Top-right icons container -->
+      <div class="absolute top-4 right-4 flex items-center gap-4">
+        <button id="settingsToggle" class="text-white text-xl">
+          <span>...</span>
+        </button>
+      </div>
 
-        <!-- Heading Area -->
-        <div class="text-center my-4">
-            <h3 id="heading" contenteditable="true" class="placeholder">HEADING HERE...</h3>
-        </div>
+      <!-- Heading Area -->
+      <div class="text-center my-4">
+        <h3 id="heading" contenteditable="true" class="placeholder">
+          HEADING HERE...
+        </h3>
+      </div>
 
-        <!-- Textarea for writing -->
-        <textarea id="scrabble-pad" placeholder="Start writing..." class="textarea-fullscreen"></textarea>
+      <!-- Textarea for writing -->
+      <textarea
+        id="scrabble-pad"
+        placeholder="Start writing..."
+        class="textarea-fullscreen"
+      ></textarea>
     </div>
 
     <!-- Settings Menu (hidden by default) -->
-    <div id="settingsMenu" class="hidden absolute top-12 right-4 bg-gray-800 text-white rounded-md shadow-lg p-2">
-        <ul>
-            <li><button id="import-btn" class="block w-full text-left px-4 py-2">Import File</button></li>
-            <li><button id="export-btn" class="block w-full text-left px-4 py-2">Export File</button></li>
-            <li><button id="darkModeToggle" class="block w-full text-left px-4 py-2">Switch to Dark Mode</button></li>
-            <li><button id="clearTextBtn" class="block w-full text-left px-4 py-2">Clear Text</button></li> <!-- New Button -->
-    
-        </ul>
+    <div
+      id="settingsMenu"
+      class="hidden absolute top-12 right-4 bg-gray-800 text-white rounded-md shadow-lg p-2"
+    >
+      <ul>
+        <li>
+          <button id="import-btn" class="block w-full text-left px-4 py-2">
+            Import File
+          </button>
+        </li>
+        <li>
+          <button id="export-btn" class="block w-full text-left px-4 py-2">
+            Export File
+          </button>
+        </li>
+        <li>
+          <button id="darkModeToggle" class="block w-full text-left px-4 py-2">
+            Switch to Dark Mode
+          </button>
+        </li>
+        <li>
+          <button id="clearTextBtn" class="block w-full text-left px-4 py-2">
+            Clear Text
+          </button>
+        </li>
+        <!-- New Button -->
+      </ul>
     </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
+  </body>
 </html>
