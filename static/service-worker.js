@@ -1,8 +1,9 @@
 const CACHE_NAME = 'scrabble-pad-cache-v1';
 const urlsToCache = [
   '/',
-  '/static/style.css',
-  '/static/script.js',
+  '/index.html',
+  '/style.css',
+  '/script.js',
   // Add other assets you want to cache
 ];
 
